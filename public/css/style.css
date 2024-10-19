@@ -4,14 +4,27 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
+/* Navbar */
 .container {
   flex: 1;
 }
+/* @media (max-width: 600px) {
+  .search-bar {
+
+  }
+} */
 
 .navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 5rem;
   background-color: white;
+}
+
+.navbar-toggler.active {
+  background-color: transparent;
+  /* xxxxxxxxmargin: 1rem; */
 }
 
 .fa-compass {

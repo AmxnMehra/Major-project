@@ -11,7 +11,7 @@ module.exports.index = async (req, res) => {
 };
 
 module.exports.renderNewForm = (req, res) => {
-  console.log(req.user);
+  // console.log(req.user);
   res.render("listings/new.ejs");
 };
 
@@ -29,7 +29,7 @@ module.exports.showListing = async (req, res) => {
     req.flash("error", "Listing You Requested For, Doen't Exist");
     res.redirect("/listings");
   }
-  console.log(listing);
+  // console.log(listing);
   res.render("listings/show.ejs", { listing });
 };
 module.exports.createListing = async (req, res, next) => {
@@ -49,7 +49,7 @@ module.exports.createListing = async (req, res, next) => {
   newListing.geometry = response.body.features[0].geometry;
 
   let savedListing = await newListing.save();
-  console.log(savedListing);
+  // console.log(savedListing);
   req.flash("success", "New Listing Created!");
   res.redirect("/listings");
 };
@@ -83,7 +83,7 @@ module.exports.updateListing = async (req, res) => {
 module.exports.destroyListing = async (req, res) => {
   let { id } = req.params;
   let deletedListing = await Listing.findByIdAndDelete(id);
-  console.log(deletedListing);
+  // console.log(deletedListing);
   req.flash("success", "Listing Deleted!");
   res.redirect("/listings");
 };
